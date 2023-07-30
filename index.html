@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrill Tourism</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1c1bf16e06.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Thrill Tourism</a>
+        <div class="menubtn"></div>
+        <div class="navigation">
+            <div class="navigation_item">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explorer</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+    <section class="home">
+      <video class="video_slide" src="1.mp4.mp4" autoplay muted loop></video>
+      <video class="video_slide" src="2.mp4" autoplay muted loop></video>
+      <video class="video_slide" src="3.mp4" autoplay muted loop></video>
+      <video class="video_slide" src="4.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Fell The<br><span>World</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium possimus, dolor officiis debitis repellendus nihil harum maxime, minus, labore ad vero quia incidunt quis tempore temporibus dicta et odit tenetur?</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content ">
+            <h1>Wonder<br><span>bridge</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium possimus, dolor officiis debitis repellendus nihil harum maxime, minus, labore ad vero quia incidunt quis tempore temporibus dicta et odit tenetur?</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Fell Nature<br><span>Realax</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium possimus, dolor officiis debitis repellendus nihil harum maxime, minus, labore ad vero quia incidunt quis tempore temporibus dicta et odit tenetur?</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Road Trips.<br><span></span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium possimus, dolor officiis debitis repellendus nihil harum maxime, minus, labore ad vero quia incidunt quis tempore temporibus dicta et odit tenetur?</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="media_icon">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+       
+        <div class="slider_navigation">
+            <div class="nav_btn active"></div>
+            <div class="nav_btn"></div>
+            <div class="nav_btn"></div>
+            <div class="nav_btn"></div>
+        </div>
+ 
+    </section>
+  <script type="text/javascript">
+    const menuBtn = document.querySelector(".menubtn");
+const navigation = document.querySelector(".navigation");
+
+menuBtn.addEventListener("click",() =>{
+menuBtn.classList.toggle("active");
+navigation.classList.toggle("active");
+});
+const btns = document.querySelectorAll(".nav_btn");
+const slides = document.querySelectorAll(".video_slide");
+const contents = document.querySelectorAll(".content");
+
+var sliderNav = function(manual){
+    btns.forEach((btn) =>{
+        btn.classList.remove("active");
+    });
+    slides.forEach((slide) =>{
+        slide.classList.remove("active");
+    });
+    contents.forEach((content) =>{
+    content.classList.remove("active");
+    });
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+    contents[manual].classList.add("active");
+}
+btns.forEach((btn , i)=>{
+    btn.addEventListener("click" , ()=>{
+        sliderNav(i);
+    });
+});
+  </script>
+</body>
+</html>
